@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "frogpay.application", "frogpay.application\frogpay.application.csproj", "{0FC9C6EA-22FA-44F0-8E90-7AC0643B1151}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "frogpay.bootstrapper", "frogpay.bootstrapper\frogpay.bootstrapper.csproj", "{EE2D2F1D-C3AE-422B-89AD-CD15ABDC4686}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "frogpay.domain", "frogpay.domain\frogpay.domain.csproj", "{13F211C1-387C-4141-B3EA-582D7898C6A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "frogpay.repository", "frogpay.repository\frogpay.repository.csproj", "{C0AFB3F0-D370-407D-900F-26F9085D2668}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "frogpay.api.rest", "frogpay.api.rest\frogpay.api.rest.csproj", "{EFAB1412-D582-4578-A633-3F1981480471}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FC9C6EA-22FA-44F0-8E90-7AC0643B1151}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FC9C6EA-22FA-44F0-8E90-7AC0643B1151}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FC9C6EA-22FA-44F0-8E90-7AC0643B1151}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FC9C6EA-22FA-44F0-8E90-7AC0643B1151}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE2D2F1D-C3AE-422B-89AD-CD15ABDC4686}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE2D2F1D-C3AE-422B-89AD-CD15ABDC4686}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE2D2F1D-C3AE-422B-89AD-CD15ABDC4686}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE2D2F1D-C3AE-422B-89AD-CD15ABDC4686}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13F211C1-387C-4141-B3EA-582D7898C6A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13F211C1-387C-4141-B3EA-582D7898C6A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13F211C1-387C-4141-B3EA-582D7898C6A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13F211C1-387C-4141-B3EA-582D7898C6A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0AFB3F0-D370-407D-900F-26F9085D2668}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0AFB3F0-D370-407D-900F-26F9085D2668}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0AFB3F0-D370-407D-900F-26F9085D2668}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0AFB3F0-D370-407D-900F-26F9085D2668}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFAB1412-D582-4578-A633-3F1981480471}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFAB1412-D582-4578-A633-3F1981480471}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFAB1412-D582-4578-A633-3F1981480471}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFAB1412-D582-4578-A633-3F1981480471}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
