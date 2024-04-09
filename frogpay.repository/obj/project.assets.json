@@ -548,6 +548,16 @@
             "rid": "win"
           }
         }
+      },
+      "frogpay.domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/frogpay.domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/frogpay.domain.dll": {}
+        }
       }
     }
   },
@@ -1621,12 +1631,18 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "frogpay.domain/1.0.0": {
+      "type": "project",
+      "path": "../frogpay.domain/frogpay.domain.csproj",
+      "msbuildProject": "../frogpay.domain/frogpay.domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "EntityFramework >= 6.4.4",
-      "Microsoft.EntityFrameworkCore >= 7.0.18"
+      "Microsoft.EntityFrameworkCore >= 7.0.18",
+      "frogpay.domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1657,7 +1673,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/emersongaldino/Projects/Tests/FrogPay.Galdino/frogpay.domain/frogpay.domain.csproj": {
+              "projectPath": "/Users/emersongaldino/Projects/Tests/FrogPay.Galdino/frogpay.domain/frogpay.domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
