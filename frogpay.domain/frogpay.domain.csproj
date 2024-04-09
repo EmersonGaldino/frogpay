@@ -9,4 +9,8 @@
       <Compile Remove="Class1.cs" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Service\" />
+    </ItemGroup>
+
 </Project>

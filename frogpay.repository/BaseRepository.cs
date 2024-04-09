@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using frogpay.domain.Entity.Base;
+using frogpay.domain.Repositories.IRepository.Base;
 using frogpay.repository.context;
 using Microsoft.EntityFrameworkCore;
 
@@ -30,7 +31,7 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
         await SaveChanges();
     }
 
-    public async Task<List<TEntity>> GetAllAsync() => await DbSet.ToListAsync();
+    public async Task<IList<TEntity>> GetAllAsync() => await DbSet.ToListAsync();
     public async Task<TEntity> GetByIdAsync(string id) => await DbSet.FindAsync(id);
 
     public async Task<bool> Update(TEntity model)
