@@ -1,10 +1,11 @@
+using System;
 using frogpay.domain.Entity.Base;
 using frogpay.repository.context;
 using Microsoft.EntityFrameworkCore;
 
 namespace frogpay.repository;
 
-public class BaseRepository<TEntity> : IBaserepository<TEntity> where TEntity : BaseEntity
+public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : BaseEntity
 {
     protected readonly ContextDb context;
     protected DbSet<TEntity> DbSet;
@@ -14,6 +15,6 @@ public class BaseRepository<TEntity> : IBaserepository<TEntity> where TEntity : 
         this.context = context;
         DbSet = context.Set<TEntity>();
     }
-    
-    
+
+    public void Dispose() => GC.SuppressFinalize(this);
 }
