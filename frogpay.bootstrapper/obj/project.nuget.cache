@@ -1,8 +1,26 @@
 {
   "version": 2,
-  "dgSpecHash": "wIaAAYprAS93k1O/rU+UwNCUXB2qgWoASB14WMg5fhbQR6aisAixqITGe59iw+N/j31nF4BdaqsfyhF8asz0Uw==",
+  "dgSpecHash": "bFrLXvGfrc/+XvzGw7x0lFpESZVeKY9S1ley27bI0OqE2hMgOJ8v7Rcfmv8bgaeex4msrw6RKVQSGY9bKlTrYQ==",
   "success": true,
   "projectFilePath": "/Users/emersongaldino/Projects/Tests/FrogPay.Galdino/frogpay.bootstrapper/frogpay.bootstrapper.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/emersongaldino/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/6.0.13/microsoft.aspnetcore.authentication.jwtbearer.6.0.13.nupkg.sha512",
+    "/Users/emersongaldino/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
+    "/Users/emersongaldino/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/Users/emersongaldino/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/7.0.0/microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "/Users/emersongaldino/.nuget/packages/microsoft.identitymodel.jsonwebtokens/6.10.0/microsoft.identitymodel.jsonwebtokens.6.10.0.nupkg.sha512",
+    "/Users/emersongaldino/.nuget/packages/microsoft.identitymodel.logging/6.10.0/microsoft.identitymodel.logging.6.10.0.nupkg.sha512",
+    "/Users/emersongaldino/.nuget/packages/microsoft.identitymodel.protocols/6.10.0/microsoft.identitymodel.protocols.6.10.0.nupkg.sha512",
+    "/Users/emersongaldino/.nuget/packages/microsoft.identitymodel.protocols.openidconnect/6.10.0/microsoft.identitymodel.protocols.openidconnect.6.10.0.nupkg.sha512",
+    "/Users/emersongaldino/.nuget/packages/microsoft.identitymodel.tokens/6.10.0/microsoft.identitymodel.tokens.6.10.0.nupkg.sha512",
+    "/Users/emersongaldino/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/emersongaldino/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
+    "/Users/emersongaldino/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "/Users/emersongaldino/.nuget/packages/swashbuckle.aspnetcore.swagger/6.5.0/swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "/Users/emersongaldino/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.5.0/swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "/Users/emersongaldino/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.5.0/swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
+    "/Users/emersongaldino/.nuget/packages/system.identitymodel.tokens.jwt/6.10.0/system.identitymodel.tokens.jwt.6.10.0.nupkg.sha512",
+    "/Users/emersongaldino/.nuget/packages/system.security.cryptography.cng/4.5.0/system.security.cryptography.cng.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

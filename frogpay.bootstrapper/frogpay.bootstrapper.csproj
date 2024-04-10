@@ -11,15 +11,24 @@
 
     <ItemGroup>
       <Folder Include="Configurations\Auth\" />
+      <Folder Include="Configurations\AutoMapper\" />
       <Folder Include="Configurations\Constants\" />
-      <Folder Include="Configurations\Cors\" />
       <Folder Include="Configurations\Environments\" />
       <Folder Include="Configurations\Exceptions\" />
       <Folder Include="Configurations\Injections\" />
       <Folder Include="Configurations\Logger\" />
       <Folder Include="Configurations\Performance\" />
       <Folder Include="Configurations\Security\" />
-      <Folder Include="Configurations\Swagger\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.13" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+      <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.5.0" />
+      <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0" />
+      <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
     </ItemGroup>
 
 </Project>
