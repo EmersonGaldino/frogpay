@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using frogpay.domain.Entity.Bank;
 using frogpay.domain.Entity.Base;
 using frogpay.domain.Entity.Store;
 
@@ -18,5 +19,6 @@ public class UserEntity : BaseEntity
     [Column("login")]
     public string Login { get; set; }
 
-    public ICollection<StoreEntity> Stores { get; set; } 
+    public ICollection<StoreEntity> Stores { get; set; }
+    public DataBankEntity Account { get; set; }
 }
