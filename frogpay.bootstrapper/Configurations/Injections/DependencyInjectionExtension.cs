@@ -1,3 +1,4 @@
+using System;
 using frogpay.application.AppService.User;
 using frogpay.application.Interface.User;
 using frogpay.bootstrapper.Configurations.Security;
@@ -5,6 +6,7 @@ using frogpay.domain.Repositories.IRepository.User;
 using frogpay.domain.Service.User;
 using frogpay.repository.context;
 using frogpay.repository.User;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -41,5 +43,25 @@ public static class DependencyInjectionExtension
         #endregion
         
         return services;
+    }
+    
+    public static void AddDatabaseConfiguration(this IServiceCollection services, IConfiguration configuration)
+    {
+        if (services == null) throw new ArgumentNullException(nameof(services));
+
+        var getEnv = Environment.GetEnvironmentVariable("ENVIRONMENT"); // Caso queira utilizar varialve de ambiente
+
+        if (getEnv is "Development" or null)
+        {
+            services.AddDbContext<ContextDb>(options =>
+                options.UseNpgsql(configuration.GetConnectionString("Default")));
+        }
+        else
+        {
+
+            services.AddDbContext<ContextDb>(options =>
+                options.UseNpgsql(Environment.GetEnvironmentVariable("DefaultConnection")!));
+        }
+
     }
 }

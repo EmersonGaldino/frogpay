@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "vX73Y3Nkwp3FtySDSOs2ORtwTCzihDSb1fgsarfftbUdXC/GJX2jCSF9Tr7wBsQfQVRdu200TKgqNLLkCAKdgw==",
+  "dgSpecHash": "xHHGeLNm8pJLNfCJQvr3M1d22p8LS/MYNdzr9WfKOzMYB4/3wKBwHE6epfyVjNKlfjTqhJ1Y7X3RBRmXe8B6Dg==",
   "success": true,
   "projectFilePath": "/Users/emersongaldino/Projects/Tests/FrogPay.Galdino/frogpay.bootstrapper/frogpay.bootstrapper.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "/Users/emersongaldino/.nuget/packages/microsoft.entityframeworkcore/7.0.18/microsoft.entityframeworkcore.7.0.18.nupkg.sha512",
     "/Users/emersongaldino/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.18/microsoft.entityframeworkcore.abstractions.7.0.18.nupkg.sha512",
     "/Users/emersongaldino/.nuget/packages/microsoft.entityframeworkcore.analyzers/7.0.18/microsoft.entityframeworkcore.analyzers.7.0.18.nupkg.sha512",
+    "/Users/emersongaldino/.nuget/packages/microsoft.entityframeworkcore.relational/7.0.1/microsoft.entityframeworkcore.relational.7.0.1.nupkg.sha512",
     "/Users/emersongaldino/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "/Users/emersongaldino/.nuget/packages/microsoft.extensions.caching.abstractions/7.0.0/microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
     "/Users/emersongaldino/.nuget/packages/microsoft.extensions.caching.memory/7.0.0/microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",
@@ -38,6 +39,8 @@
     "/Users/emersongaldino/.nuget/packages/microsoft.win32.registry/4.7.0/microsoft.win32.registry.4.7.0.nupkg.sha512",
     "/Users/emersongaldino/.nuget/packages/microsoft.win32.systemevents/4.7.0/microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "/Users/emersongaldino/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
+    "/Users/emersongaldino/.nuget/packages/npgsql/7.0.1/npgsql.7.0.1.nupkg.sha512",
+    "/Users/emersongaldino/.nuget/packages/npgsql.entityframeworkcore.postgresql/7.0.1/npgsql.entityframeworkcore.postgresql.7.0.1.nupkg.sha512",
     "/Users/emersongaldino/.nuget/packages/runtime.native.system.data.sqlclient.sni/4.7.0/runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "/Users/emersongaldino/.nuget/packages/runtime.win-arm64.runtime.native.system.data.sqlclient.sni/4.4.0/runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "/Users/emersongaldino/.nuget/packages/runtime.win-x64.runtime.native.system.data.sqlclient.sni/4.4.0/runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
