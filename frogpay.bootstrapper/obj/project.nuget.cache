@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Un62WawikB6ubsg47KrqDi6S/4d+mHufujBr8f6vpR0tZvCh+Iav7FlP/yAdjMMNOqQu502GkK7GFo5hqwCXSg==",
+  "dgSpecHash": "vX73Y3Nkwp3FtySDSOs2ORtwTCzihDSb1fgsarfftbUdXC/GJX2jCSF9Tr7wBsQfQVRdu200TKgqNLLkCAKdgw==",
   "success": true,
   "projectFilePath": "/Users/emersongaldino/Projects/Tests/FrogPay.Galdino/frogpay.bootstrapper/frogpay.bootstrapper.csproj",
   "expectedPackageFiles": [
+    "/Users/emersongaldino/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
+    "/Users/emersongaldino/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.0/automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "/Users/emersongaldino/.nuget/packages/elasticsearch.net/7.17.5/elasticsearch.net.7.17.5.nupkg.sha512",
     "/Users/emersongaldino/.nuget/packages/entityframework/6.4.4/entityframework.6.4.4.nupkg.sha512",
     "/Users/emersongaldino/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/6.0.13/microsoft.aspnetcore.authentication.jwtbearer.6.0.13.nupkg.sha512",
