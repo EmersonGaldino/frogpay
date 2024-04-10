@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using frogpay.domain.Entity.User;
@@ -8,6 +9,7 @@ namespace frogpay.domain.Service.User;
 public class UserService : IUserService
 {
     private readonly IUserRepository repository;
+
     public UserService(IUserRepository repository)
     {
         this.repository = repository;
@@ -15,6 +17,16 @@ public class UserService : IUserService
 
     public async Task<UserEntity> GetUser(UserEntity model) => await repository.GetUser(model);
     public async Task<List<UserEntity>> GetAllUsers() => await repository.GetAll();
-    public async Task<bool> CreateUser(UserEntity model) => await repository.CreateUser(model);
 
+    public async Task<bool> CreateUser(UserEntity model)
+    {
+        var user = await GetByEmail(model.Email);
+      return user != null ? false : await repository.CreateUser(model);
+    } 
+
+    public async Task<UserEntity> UpdateUser(UserEntity map, Guid idPessoa) =>
+         await repository.UpdateUser(map);
+    
+
+    private async Task<UserEntity> GetByEmail(string email) => await repository.GetUserByEmail(email);
 }

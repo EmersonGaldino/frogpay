@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -35,4 +36,14 @@ public class UserRepository : BaseRepository<UserEntity>, IUserRepository
         await AddOrUpdateAsync(model);
         return true;
     }
+
+    public async Task<UserEntity> UpdateUser(UserEntity map)
+    {
+        
+        await AddOrUpdateAsync(map);
+        return await GetByIdAsync(map.id);
+    }
+
+    public async Task<UserEntity> GetUserByEmail(string email) =>
+         await context.User.FirstOrDefaultAsync(u => u.Email == email);
 }

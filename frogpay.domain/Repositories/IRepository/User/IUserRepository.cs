@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using frogpay.domain.Entity.User;
@@ -10,4 +11,6 @@ public interface IUserRepository : IBaseRepository<UserEntity>
     Task<UserEntity> GetUser(UserEntity model);
     Task<List<UserEntity>> GetAll();
     Task<bool> CreateUser(UserEntity model);
+    Task<UserEntity> UpdateUser(UserEntity map);
+    Task<UserEntity> GetUserByEmail(string email);
 }

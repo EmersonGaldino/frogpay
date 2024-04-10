@@ -39,13 +39,20 @@ public class UserController : ApiBaseController
     [SwaggerResponse(200, "Usuarios criado com sucesso.", typeof(SuccessResponse<BaseModelView<bool>>))]
     [SwaggerResponse(400, "Não foi possível criar usuarios do sistema.", typeof(BadResponse))]
     [SwaggerResponse(500, "Erro no rastreamento da pilha.", typeof(BadResponse))]
-    public async Task<IActionResult> Post([FromBody] UserViewModel model) => await AutoResult(
-        async () => new BaseModelView<bool>
-        {
-            Data = await AppService.Createsuer(Mapper.Map<UserEntity>(model)),
-            Message = "Usuario cirado com sucesso",
-            Success = true
-        });
+    public async Task<IActionResult> Post([FromBody] UserViewModel model)
+    {
+        var data = await AppService.Createsuer(Mapper.Map<UserEntity>(model));
+
+        if (data)
+            return Ok(new BaseModelView<bool>
+            {
+                Data = data,
+                Message = "Usuario cirado com sucesso",
+                Success = true
+            });
+        AddErrors("Já existe um usuario cadastrado no sistema usando este email.", 400);
+        return Error("Usuario");
+    }
 
     [HttpPut("{id_pessoa}")]
     [SwaggerOperation(Summary = "Alerar  usuarios",
@@ -54,10 +61,14 @@ public class UserController : ApiBaseController
         typeof(SuccessResponse<BaseModelView<UserModelView>>))]
     [SwaggerResponse(400, "Não foi possível alterar od dados do usuario no sistema.", typeof(BadResponse))]
     [SwaggerResponse(500, "Erro no rastreamento da pilha.", typeof(BadResponse))]
-    public async Task<IActionResult> Put([FromBody] UserViewModel, Guid id_pessoa) => await AutoResult(
-        async () => new BaseModelView<UserModelView>
+    public async Task<IActionResult> Put([FromBody] UserViewModel model, Guid id_pessoa) => await AutoResult(
+       async () => new BaseModelView<UserModelView>
         {
+            Data = Mapper.Map<UserModelView>(await AppService.UpdateUser(Mapper.Map<UserEntity>(model), id_pessoa)),
+            Message = "Dados do usuario alterado com sucesso",
+            Success = true
+        }
+    );
 
-        });
 
 }
