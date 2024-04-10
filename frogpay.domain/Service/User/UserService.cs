@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using frogpay.domain.Entity.User;
 using frogpay.domain.Repositories.IRepository.User;
@@ -13,5 +14,6 @@ public class UserService : IUserService
     }
 
     public async Task<UserEntity> GetUser(UserEntity model) => await repository.GetUser(model);
+    public async Task<List<UserEntity>> GetAllUsers() => await repository.GetAll();
 
 }
