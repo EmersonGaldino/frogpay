@@ -1,6 +1,8 @@
 using AutoMapper;
+using frogpay.api.rest.Models.Account;
 using frogpay.api.rest.Models.Store;
 using frogpay.api.rest.Models.User;
+using frogpay.domain.Entity.Bank;
 using frogpay.domain.Entity.Store;
 using frogpay.domain.Entity.User;
 
@@ -14,6 +16,8 @@ namespace frogpay.api.rest.AutoMapper
             CreateMap<UserEntity, UserModelView>().ReverseMap();
             CreateMap<StoreEntity, StoreModelView>().ReverseMap();
             CreateMap<UserEntity, UserViewModel>().ReverseMap();
+            CreateMap<DataBankEntity, AccountModelView>().ReverseMap();
+            CreateMap<DataBankEntity, AccountViewModel>().ReverseMap();
         }
     }
 }
