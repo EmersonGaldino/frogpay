@@ -1,11 +1,13 @@
 using System;
 using frogpay.application.AppService.User;
 using frogpay.application.Interface.User;
+using frogpay.bootstrapper.Configurations.Performance.Filters;
 using frogpay.bootstrapper.Configurations.Security;
 using frogpay.domain.Repositories.IRepository.User;
 using frogpay.domain.Service.User;
 using frogpay.repository.context;
 using frogpay.repository.User;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,6 +26,14 @@ public static class DependencyInjectionExtension
             .Configure(tokenConfig);
         services.AddSingleton(tokenConfig);
 
+        #endregion
+        
+        #region .:: Configuration filter performace
+
+        services.AddTransient<PerformaceFilters>();
+        services.AddMvc(options => options.Filters.AddService<PerformaceFilters>())
+            .AddJsonOptions(options => options.JsonSerializerOptions.IgnoreNullValues = true)
+            .SetCompatibilityVersion(CompatibilityVersion.Latest);
         #endregion
 
         #region .::AppServices
