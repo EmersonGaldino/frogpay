@@ -32,6 +32,19 @@ public class AccountController : ApiBaseController
         Message = "Contas encontradas com sucesso",
         Success = true
     });
+    
+    [HttpGet("{id_pessoa}")]
+    [SwaggerOperation(Summary = "Buscar contas dos usuarios",
+        Description = "Busca todas as contas e usuarios cadastrados.")]
+    [SwaggerResponse(200, "Usuarios encontrados com sucesso.", typeof(SuccessResponse<BaseModelView<AccountModelView>>))]
+    [SwaggerResponse(400, "Não foi possível localizar usuarios do sistema.", typeof(BadResponse))]
+    [SwaggerResponse(500, "Erro no rastreamento da pilha.", typeof(BadResponse))]
+    public async Task<IActionResult> Get(Guid id_pessoa) => await AutoResult(async () => new BaseModelView<AccountModelView>
+    {
+        Data = Mapper.Map<AccountModelView>(await AppService.GetAccountByUserId(id_pessoa)),
+        Message = "Contas encontradas com sucesso",
+        Success = true
+    });
 
     [HttpPost]
     [SwaggerOperation(Summary = "Cria conta",

@@ -46,7 +46,7 @@ public class AccountRepository : BaseRepository<DataBankEntity>, IAccountReposit
     }
 
     public async Task<DataBankEntity> GetAccountByUserId(Guid userId) =>
-        await context.Account.FirstOrDefaultAsync(u => u.id == userId);
+        await context.Account.FirstOrDefaultAsync(u => u.UserId == userId);
 
     public async Task<bool> DeleteAccount(Guid account_id) =>
         await Delete(await context.Account.FirstOrDefaultAsync(c => c.id == account_id));
