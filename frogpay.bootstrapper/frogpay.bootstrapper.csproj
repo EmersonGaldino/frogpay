@@ -17,7 +17,6 @@
       <Folder Include="Configurations\Exceptions\" />
       <Folder Include="Configurations\Injections\" />
       <Folder Include="Configurations\Logger\" />
-      <Folder Include="Configurations\Performance\" />
     </ItemGroup>
 
     <ItemGroup>
