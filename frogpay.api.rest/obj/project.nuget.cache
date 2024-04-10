@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bcBxQUKbakP5aDuNLm+pyyoonMs+I5NK6tpA4W0uEJwk6UPNT3tQxsz3O0z1mE8VX5OqXdefyiQnVOqX8LRkWg==",
+  "dgSpecHash": "Cu+R67kK6bolztJFa2b3BftGHSKGyCzXx22SjDxgrMLQli4OWTzKRIPiphKYvyTETxTd6M8QB2zCmHk/vR/TZw==",
   "success": true,
-  "projectFilePath": "/Users/emersongaldino/Projects/Tests/FrogPay.Galdino/frogpay.api.rest/frogpay.api.rest.csproj",
+  "projectFilePath": "/Users/emersongaldino/Projects/Tests/FrogPay.Galdino/frogpay.api.rest/frogpay.api.csproj",
   "expectedPackageFiles": [
     "/Users/emersongaldino/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/Users/emersongaldino/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.0/automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

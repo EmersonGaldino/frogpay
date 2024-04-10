@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using frogpay.domain.Entity.Base;
+using frogpay.domain.Entity.Store;
 
 namespace frogpay.domain.Entity.User;
 
@@ -15,4 +17,6 @@ public class UserEntity : BaseEntity
     public string Password { get; set; }
     [Column("login")]
     public string Login { get; set; }
+
+    public ICollection<StoreEntity> Stories { get; set; }
 }

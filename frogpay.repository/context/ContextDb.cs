@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using frogpay.domain.Entity.Store;
 using frogpay.domain.Entity.User;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -23,8 +24,13 @@ public class ContextDb : DbContext
     public virtual DbSet<UserEntity> User { get; set; } 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        // base.OnModelCreating(modelBuilder);
-        modelBuilder.Entity<UserEntity>().ToTable("tb_user");
+        base.OnModelCreating(modelBuilder);
+        // modelBuilder.Entity<UserEntity>().ToTable("tb_user");
+        
+        modelBuilder.Entity<StoreEntity>()
+            .HasOne(s => s.user)
+            .WithMany(a => a.Stories)
+            .HasForeignKey(s => s.StoreId);
     }
     public async Task<int> SaveChangesAsync()
     {

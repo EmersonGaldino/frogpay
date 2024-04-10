@@ -32,7 +32,7 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
     }
 
     public async Task<IList<TEntity>> GetAllAsync() => await DbSet.ToListAsync();
-    public async Task<TEntity> GetByIdAsync(string id) => await DbSet.FindAsync(id);
+    public async Task<TEntity> GetByIdAsync(Guid id) => await DbSet.FindAsync(id);
 
     public async Task<bool> Update(TEntity model)
     {

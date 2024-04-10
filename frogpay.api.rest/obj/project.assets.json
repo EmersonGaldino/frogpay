@@ -2934,9 +2934,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/emersongaldino/Projects/Tests/FrogPay.Galdino/frogpay.api.rest/frogpay.api.rest.csproj",
-      "projectName": "frogpay.api.rest",
-      "projectPath": "/Users/emersongaldino/Projects/Tests/FrogPay.Galdino/frogpay.api.rest/frogpay.api.rest.csproj",
+      "projectUniqueName": "/Users/emersongaldino/Projects/Tests/FrogPay.Galdino/frogpay.api.rest/frogpay.api.csproj",
+      "projectName": "frogpay.api",
+      "projectPath": "/Users/emersongaldino/Projects/Tests/FrogPay.Galdino/frogpay.api.rest/frogpay.api.csproj",
       "packagesPath": "/Users/emersongaldino/.nuget/packages/",
       "outputPath": "/Users/emersongaldino/Projects/Tests/FrogPay.Galdino/frogpay.api.rest/obj/",
       "projectStyle": "PackageReference",
