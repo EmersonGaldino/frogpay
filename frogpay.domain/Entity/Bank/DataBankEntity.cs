@@ -1,5 +1,4 @@
 using System;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using frogpay.domain.Entity.Base;
 using frogpay.domain.Entity.User;

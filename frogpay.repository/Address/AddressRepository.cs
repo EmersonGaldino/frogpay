@@ -42,7 +42,7 @@ public class AddressRepository : BaseRepository<AddressEntity>,IAddressRepositor
     }
 
     public async Task<AddressEntity> GetAddressByUserId(Guid userId) =>
-        await context.Address.FirstOrDefaultAsync(u => u.UserId == userId);
+        await context.Address.Include(u => u.User).FirstOrDefaultAsync(u => u.UserId == userId);
 
     public async Task<bool> DeleteAddress(Guid account_id) =>
         await Delete(await context.Address.FirstOrDefaultAsync(c => c.id == account_id));

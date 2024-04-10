@@ -43,6 +43,14 @@ public class ContextDb : DbContext
             .HasOne(d => d.User)
             .WithOne(u => u.Account)
             .HasForeignKey<DataBankEntity>(d => d.UserId);
+        
+        modelBuilder.Entity<AddressEntity>()
+            .HasKey(d => d.UserId);
+        modelBuilder.Entity<AddressEntity>()
+            .HasOne(ad => ad.User)
+            .WithOne(us => us.Address)
+            .HasForeignKey<AddressEntity>(u => u.UserId);
+       
     }
     public async Task<int> SaveChangesAsync()
     {

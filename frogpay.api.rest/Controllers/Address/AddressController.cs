@@ -67,32 +67,32 @@ public class AddressController : ApiBaseController
         return Error("Já existe um usuario cadastrado no sistema usando este email.");
     }
 
-    [HttpPut("{account_id}")]
+    [HttpPut("{address_id}")]
     [SwaggerOperation(Summary = "Endereço  usuarios",
         Description = "Endereço do usuario no sistema")]
     [SwaggerResponse(200, "Dados do usuario alterado com sucesso.",
         typeof(SuccessResponse<BaseModelView<AddressModelView>>))]
     [SwaggerResponse(400, "Não foi possível alterar Endereço do usuario no sistema.", typeof(BadResponse))]
     [SwaggerResponse(500, "Erro no rastreamento da pilha.", typeof(BadResponse))]
-    public async Task<IActionResult> Put([FromBody] AddressViewModel model, Guid account_id) => await AutoResult(
+    public async Task<IActionResult> Put([FromBody] AddressViewModel model, Guid address_id) => await AutoResult(
        async () => new BaseModelView<AddressModelView>
         {
-            Data = Mapper.Map<AddressModelView>(await AppService.UpdateAddress(Mapper.Map<AddressEntity>(model), account_id)),
+            Data = Mapper.Map<AddressModelView>(await AppService.UpdateAddress(Mapper.Map<AddressEntity>(model), address_id)),
             Message = "Endereço do usuario alterado com sucesso",
             Success = true
         }
     );
-    [HttpDelete("{account_id}")]
+    [HttpDelete("{address_id}")]
     [SwaggerOperation(Summary = "Deletar Endereço usuario",
         Description = "Deletado Endereço do usuario no sistema")]
     [SwaggerResponse(200, "Dados do usuario deletado com sucesso.",
         typeof(SuccessResponse<BaseModelView<bool>>))]
     [SwaggerResponse(400, "Não foi possível deletar os dados do usuario no sistema.", typeof(BadResponse))]
     [SwaggerResponse(500, "Erro no rastreamento da pilha.", typeof(BadResponse))]
-    public async Task<IActionResult> Delete(Guid account_id) => await AutoResult(
+    public async Task<IActionResult> Delete(Guid address_id) => await AutoResult(
         async () => new BaseModelView<bool>
         {
-            Data = await AppService.DeleteAddress(account_id),
+            Data = await AppService.DeleteAddress(address_id),
             Message = "Endereço do usuario deletado com sucesso",
             Success = true
         }
