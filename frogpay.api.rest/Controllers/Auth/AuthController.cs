@@ -84,7 +84,7 @@ public class AuthController : ApiBaseController
                     new Claim("Email", user.Email),
                     new Claim("User", user.Login)
                 }),
-            Expires = DateTime.UtcNow.AddDays(TokenConfig.ExpireIn),
+            Expires = DateTime.UtcNow.AddMinutes(TokenConfig.ExpireIn),
             SigningCredentials =
                 new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),
             Audience = TokenConfig.Audience,
