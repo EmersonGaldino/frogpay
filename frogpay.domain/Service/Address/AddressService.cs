@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using frogpay.domain.Entity.Address;
 using frogpay.domain.Entity.Bank;
+using frogpay.domain.Repositories.IRepository.Account;
 using frogpay.domain.Repositories.IRepository.Address;
-using frogpay.repository.context;
 
-namespace frogpay.repository.Address;
+namespace frogpay.domain.Service.Address;
 
-public class AddressRepository : BaseRepository<AddressEntity>,IAddressRepository
+public class AddressService : IAddressService
 {
-    private readonly ContextDb context;
-    public AddressRepository(ContextDb context) :base(context)
+    private readonly IAddressRepository repository;
+    public AddressService(IAddressRepository repository)
     {
-        this.context = context;
+        this.repository = repository;
     }
 
     public Task<AddressEntity> GetAddress(AddressEntity model)
@@ -31,12 +31,12 @@ public class AddressRepository : BaseRepository<AddressEntity>,IAddressRepositor
         throw new NotImplementedException();
     }
 
-    public Task<DataBankEntity> UpdateAddress(AddressEntity map)
+    public Task<AddressEntity> UpdateAddress(AddressEntity map, Guid account_id)
     {
         throw new NotImplementedException();
     }
 
-    public Task<DataBankEntity> GetAddressByUserId(Guid userId)
+    public Task<AddressEntity> GetAddressByUserId(Guid userId)
     {
         throw new NotImplementedException();
     }
