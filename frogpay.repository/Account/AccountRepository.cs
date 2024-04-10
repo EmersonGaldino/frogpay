@@ -8,10 +8,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace frogpay.repository.Account;
 
-public class BankRepository : BaseRepository<DataBankEntity>, IBankRepository
+public class AccountRepository : BaseRepository<DataBankEntity>, IAccountRepository
 {
     private DbContext context;
-    public BankRepository(ContextDb context) : base(context)
+    public AccountRepository(ContextDb context) : base(context)
     {
         this.context = context;
     }
