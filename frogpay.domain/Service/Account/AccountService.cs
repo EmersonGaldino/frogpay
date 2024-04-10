@@ -13,33 +13,30 @@ public class AccountService : IAccountService
     {
         this.repository = repository;
     }
-    public Task<DataBankEntity> GetAccount(DataBankEntity model)
+    public async Task<DataBankEntity> GetAccount(DataBankEntity model)
     {
-        throw new NotImplementedException();
+        var account = await GetAccountByUserId(model.UserId);
+        return account == null ? null : await repository.GetAccount(model);
     }
 
-    public Task<List<DataBankEntity>> GetAll()
+    public async Task<List<DataBankEntity>> GetAll() => await repository.GetAll();
+    
+
+    public async Task<bool> CreateAccount(DataBankEntity model)
     {
-        throw new NotImplementedException();
+        var account = await GetAccountByUserId(model.UserId);
+        return account != null ? false : await repository.CreateAccount(model);
     }
 
-    public Task<bool> CreateAccount(DataBankEntity model)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<DataBankEntity> UpdateAccount(DataBankEntity map) => await repository.UpdateAccount(map);
 
-    public Task<DataBankEntity> UpdateAccount(DataBankEntity map)
-    {
-        throw new NotImplementedException();
-    }
 
-    public Task<DataBankEntity> GetAccountByUserId(Guid userId)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<DataBankEntity> GetAccountByUserId(Guid userId) => await repository.GetAccountByUserId(userId);
+   
 
-    public Task<bool> DeleteAccount(Guid userId)
+    public async Task<bool> DeleteAccount(Guid userId)
     {
-        throw new NotImplementedException();
+        var account = await GetAccountByUserId(userId);
+        return account != null ? false : await repository.DeleteAccount(userId);
     }
 }
