@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "6ChHEJUNpve0mEz1rrO01xxylf1Ppf/ffcIo+58RZXud5rlVfrDQ+BzR+WlsoUajK0vfguxd46L9t/nTCjSh4w==",
+  "dgSpecHash": "JN7jCFV8xRSoQ2FNu23oZqLORJpHn8cZBk7Vt0rrm6iMCDfeBa47uN2bqXQOC52zqluw1lPz6OUVJdViqpqpVw==",
   "success": true,
   "projectFilePath": "/Users/emersongaldino/Projects/Tests/FrogPay.Galdino/FrogPay.Api/FrogPay.Api.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/emersongaldino/.nuget/packages/microsoft.netcore.app.host.osx-x64/3.1.32/microsoft.netcore.app.host.osx-x64.3.1.32.nupkg.sha512"
+  ],
   "logs": []
 }

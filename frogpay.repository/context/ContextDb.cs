@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using frogpay.domain.Entity.User;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace frogpay.repository.context;
 
@@ -9,15 +10,21 @@ public class ContextDb : DbContext
     public ContextDb(DbContextOptions<ContextDb> options) : base(options)
     {
     }
-    public virtual DbSet<UserEntity> User { get; set; } = null;
+
+    protected override void OnConfiguring(DbContextOptionsBuilder builder)
+    {
+        base.OnConfiguring(
+            builder
+                .EnableSensitiveDataLogging()
+                .UseLoggerFactory(
+                    LoggerFactory.Create(builder => builder.AddConsole() ))
+            );
+    }
+    public virtual DbSet<UserEntity> User { get; set; } 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<UserEntity>(entity =>
-        {
-            // entity.ToTable("tb_user");
-            entity.HasKey(p => p.Id);
-
-        });
+        // base.OnModelCreating(modelBuilder);
+        modelBuilder.Entity<UserEntity>().ToTable("tb_user");
     }
     public async Task<int> SaveChangesAsync()
     {
@@ -26,4 +33,5 @@ public class ContextDb : DbContext
         return await base.SaveChangesAsync();
 
     }
+    
 }

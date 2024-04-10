@@ -43,7 +43,7 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
 
     public async Task AddOrUpdateAsync(TEntity model)
     {
-        if (string.IsNullOrEmpty(model.Id.ToString()))
+        if (string.IsNullOrEmpty(model.id.ToString()))
             await Add(model);
         else
             await Update(model);

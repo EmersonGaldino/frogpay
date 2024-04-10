@@ -23,45 +23,41 @@ public static class DependencyInjectionExtension
         new ConfigureFromConfigurationOptions<TokenConfig>(configuration.GetSection("TokenConfig"))
             .Configure(tokenConfig);
         services.AddSingleton(tokenConfig);
+
         #endregion
-        
+
         #region .::AppServices
+
         services.AddScoped<IUserAppService, UserAppService>();
+
         #endregion
-        
+
         #region .::Services
+
         services.AddScoped<IUserService, UserService>();
+
         #endregion
-        
+
         #region .::Repositories
-        services.AddScoped<IUserRepository,UserRepository>();
+
+        services.AddScoped<IUserRepository, UserRepository>();
+
         #endregion
-        
+
         #region .::UnitOfWork
-        
+
         services.AddScoped<ContextDb>();
+
         #endregion
-        
+
         return services;
     }
-    
+
     public static void AddDatabaseConfiguration(this IServiceCollection services, IConfiguration configuration)
     {
         if (services == null) throw new ArgumentNullException(nameof(services));
 
-        var getEnv = Environment.GetEnvironmentVariable("ENVIRONMENT"); // Caso queira utilizar varialve de ambiente
-
-        if (getEnv is "Development" or null)
-        {
-            services.AddDbContext<ContextDb>(options =>
-                options.UseNpgsql(configuration.GetConnectionString("Default")));
-        }
-        else
-        {
-
-            services.AddDbContext<ContextDb>(options =>
-                options.UseNpgsql(Environment.GetEnvironmentVariable("DefaultConnection")!));
-        }
-
+        services.AddDbContext<ContextDb>(options =>
+            options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
     }
 }
