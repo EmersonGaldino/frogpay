@@ -16,5 +16,6 @@ public class UserAppService : IUserAppService
 
     public async Task<UserEntity> GetUser(UserEntity model) => await service.GetUser(model);
     public async Task<List<UserEntity>> GetAllUsers() => await service.GetAllUsers();
+    public async Task<bool> Createsuer(UserEntity model) => await service.CreateUser(model);
 
 }

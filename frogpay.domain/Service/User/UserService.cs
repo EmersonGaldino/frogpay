@@ -15,5 +15,6 @@ public class UserService : IUserService
 
     public async Task<UserEntity> GetUser(UserEntity model) => await repository.GetUser(model);
     public async Task<List<UserEntity>> GetAllUsers() => await repository.GetAll();
+    public async Task<bool> CreateUser(UserEntity model) => await repository.CreateUser(model);
 
 }

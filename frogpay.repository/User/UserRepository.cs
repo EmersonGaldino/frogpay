@@ -28,5 +28,11 @@ public class UserRepository : BaseRepository<UserEntity>, IUserRepository
             .Include(store => store.Stores)
             .ToListAsync();
         return data;
-    } 
+    }
+
+    public async Task<bool> CreateUser(UserEntity model)
+    {
+        await AddOrUpdateAsync(model);
+        return true;
+    }
 }

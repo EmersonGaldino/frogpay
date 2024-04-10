@@ -8,4 +8,5 @@ public interface IUserAppService
 {
     Task<UserEntity> GetUser(UserEntity model);
     Task<List<UserEntity>> GetAllUsers();
+    Task<bool> Createsuer(UserEntity model);
 }

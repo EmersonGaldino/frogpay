@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -31,5 +32,32 @@ public class UserController : ApiBaseController
         Message = "Usuarios encontrado com sucesso",
         Success = true
     });
+
+    [HttpPost]
+    [SwaggerOperation(Summary = "Cria usuarios",
+        Description = "Cria um usuario no sistema")]
+    [SwaggerResponse(200, "Usuarios criado com sucesso.", typeof(SuccessResponse<BaseModelView<bool>>))]
+    [SwaggerResponse(400, "Não foi possível criar usuarios do sistema.", typeof(BadResponse))]
+    [SwaggerResponse(500, "Erro no rastreamento da pilha.", typeof(BadResponse))]
+    public async Task<IActionResult> Post([FromBody] UserViewModel model) => await AutoResult(
+        async () => new BaseModelView<bool>
+        {
+            Data = await AppService.Createsuer(Mapper.Map<UserEntity>(model)),
+            Message = "Usuario cirado com sucesso",
+            Success = true
+        });
+
+    [HttpPut("{id_pessoa}")]
+    [SwaggerOperation(Summary = "Alerar  usuarios",
+        Description = "Alterar dados do usuario no sistema")]
+    [SwaggerResponse(200, "Dados do usuario alterado com sucesso.",
+        typeof(SuccessResponse<BaseModelView<UserModelView>>))]
+    [SwaggerResponse(400, "Não foi possível alterar od dados do usuario no sistema.", typeof(BadResponse))]
+    [SwaggerResponse(500, "Erro no rastreamento da pilha.", typeof(BadResponse))]
+    public async Task<IActionResult> Put([FromBody] UserViewModel, Guid id_pessoa) => await AutoResult(
+        async () => new BaseModelView<UserModelView>
+        {
+
+        });
 
 }

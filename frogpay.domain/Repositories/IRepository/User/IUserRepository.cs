@@ -9,4 +9,5 @@ public interface IUserRepository : IBaseRepository<UserEntity>
 {
     Task<UserEntity> GetUser(UserEntity model);
     Task<List<UserEntity>> GetAll();
+    Task<bool> CreateUser(UserEntity model);
 }
