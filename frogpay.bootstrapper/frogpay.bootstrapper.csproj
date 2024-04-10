@@ -13,7 +13,6 @@
       <Folder Include="Configurations\Auth\" />
       <Folder Include="Configurations\AutoMapper\" />
       <Folder Include="Configurations\Constants\" />
-      <Folder Include="Configurations\Environments\" />
     </ItemGroup>
 
     <ItemGroup>
