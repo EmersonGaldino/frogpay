@@ -7,10 +7,10 @@ namespace frogpay.application.Interface.Address;
 
 public interface IAddressAppService
 {
-    Task<AddressEntity> GetAccount(AddressEntity model);
+    Task<AddressEntity> GetAddress(AddressEntity model);
     Task<List<AddressEntity>> GetAll();
-    Task<bool> CreateAccount(AddressEntity model);
-    Task<AddressEntity> UpdateAccount(AddressEntity map, Guid userId);
-    Task<AddressEntity> GetAccountByUserId(Guid userId);
-    Task<bool> DeleteAccount(Guid userId);
+    Task<bool> CreateAddress(AddressEntity model);
+    Task<AddressEntity> UpdateAddress(AddressEntity map, Guid userId);
+    Task<AddressEntity> GetAddressByUserId(Guid userId);
+    Task<bool> DeleteAddress(Guid userId);
 }

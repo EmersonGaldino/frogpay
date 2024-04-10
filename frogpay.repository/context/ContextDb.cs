@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using frogpay.domain.Entity.Address;
 using frogpay.domain.Entity.Bank;
 using frogpay.domain.Entity.Store;
 using frogpay.domain.Entity.User;
@@ -25,6 +26,7 @@ public class ContextDb : DbContext
     public virtual DbSet<UserEntity> User { get; set; } 
     
     public virtual DbSet<StoreEntity> Store { get; set; }
+    public virtual DbSet<AddressEntity> Address { get; set; }
     
     public virtual DbSet<DataBankEntity> Account { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)

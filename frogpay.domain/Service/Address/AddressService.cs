@@ -2,8 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using frogpay.domain.Entity.Address;
-using frogpay.domain.Entity.Bank;
-using frogpay.domain.Repositories.IRepository.Account;
 using frogpay.domain.Repositories.IRepository.Address;
 
 namespace frogpay.domain.Service.Address;
@@ -16,33 +14,29 @@ public class AddressService : IAddressService
         this.repository = repository;
     }
 
-    public Task<AddressEntity> GetAddress(AddressEntity model)
+    public async Task<AddressEntity> GetAddress(AddressEntity model)
     {
-        throw new NotImplementedException();
+        var account = await GetAddressByUserId(model.UserId);
+        return account == null ? null : await repository.GetAddress(model);
     }
 
-    public Task<List<DataBankEntity>> GetAll()
+    public async Task<List<AddressEntity>> GetAll() => await repository.GetAll();
+
+
+    public async Task<bool> CreateAddress(AddressEntity model)
     {
-        throw new NotImplementedException();
+        var account = await GetAddressByUserId(model.UserId);
+        return account != null ? false : await repository.CreateAddress(model);
     }
 
-    public Task<bool> CreateAddress(AddressEntity model)
+    public async Task<AddressEntity> UpdateAddress(AddressEntity map, Guid account_id)
     {
-        throw new NotImplementedException();
+        map.id = account_id;
+        return await repository.UpdateAddress(map);
     }
+    
+    public async Task<AddressEntity> GetAddressByUserId(Guid userId) => await repository.GetAddressByUserId(userId);
 
-    public Task<AddressEntity> UpdateAddress(AddressEntity map, Guid account_id)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<AddressEntity> GetAddressByUserId(Guid userId)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<bool> DeleteAddress(Guid account_id)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<bool> DeleteAddress(Guid account_id) =>
+        await repository.DeleteAddress(account_id);
 }

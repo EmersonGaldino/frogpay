@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using frogpay.domain.Entity.Address;
-using frogpay.domain.Entity.Bank;
 using frogpay.domain.Repositories.IRepository.Address;
 using frogpay.repository.context;
+using Microsoft.EntityFrameworkCore;
 
 namespace frogpay.repository.Address;
 
@@ -16,33 +16,34 @@ public class AddressRepository : BaseRepository<AddressEntity>,IAddressRepositor
         this.context = context;
     }
 
-    public Task<AddressEntity> GetAddress(AddressEntity model)
+    public async Task<AddressEntity> GetAddress(AddressEntity model) => await context.Address.FirstOrDefaultAsync(
+        account =>
+            account.User.id == model.UserId);
+    public async Task<List<AddressEntity>> GetAll()
     {
-        throw new NotImplementedException();
+        var data = await context.Address
+            .Include(user => user.User)
+            .ToListAsync();
+        return data;
     }
 
-    public Task<List<DataBankEntity>> GetAll()
+    public async Task<bool> CreateAddress(AddressEntity model)
     {
-        throw new NotImplementedException();
+        model.id = Guid.NewGuid();
+        await Add(model);
+        return true;
     }
 
-    public Task<bool> CreateAddress(AddressEntity model)
+    public async Task<AddressEntity> UpdateAddress(AddressEntity map)
     {
-        throw new NotImplementedException();
+        map.UdateAt = DateTime.Now;
+        await AddOrUpdateAsync(map);
+        return await GetByIdAsync(map.id);
     }
 
-    public Task<DataBankEntity> UpdateAddress(AddressEntity map)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<AddressEntity> GetAddressByUserId(Guid userId) =>
+        await context.Address.FirstOrDefaultAsync(u => u.UserId == userId);
 
-    public Task<DataBankEntity> GetAddressByUserId(Guid userId)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<bool> DeleteAddress(Guid account_id)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<bool> DeleteAddress(Guid account_id) =>
+        await Delete(await context.Address.FirstOrDefaultAsync(c => c.id == account_id));
 }

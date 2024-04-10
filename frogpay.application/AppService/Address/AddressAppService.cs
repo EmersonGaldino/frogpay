@@ -8,39 +8,20 @@ namespace frogpay.application.AppService.Address;
 
 public class AddressAppService : IAddressAppService
 {
-    private readonly IAccountService service;
-    public AddressAppService(IAccountService service)
+    private readonly IAddressService service;
+    public AddressAppService(IAddressService service)
     {
         this.service = service;
     }
-
-    public Task<AddressEntity> GetAccount(AddressEntity model)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<List<AddressEntity>> GetAll()
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<bool> CreateAccount(AddressEntity model)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<AddressEntity> UpdateAccount(AddressEntity map, Guid userId)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<AddressEntity> GetAccountByUserId(Guid userId)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<bool> DeleteAccount(Guid userId)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<AddressEntity> GetAddress(AddressEntity model) => await service.GetAddress(model);
+    
+    public async Task<List<AddressEntity>> GetAll() => await service.GetAll();
+    
+    public async Task<bool> CreateAddress(AddressEntity model) => await service.CreateAddress(model);
+    
+    public async Task<AddressEntity> UpdateAddress(AddressEntity map, Guid userId) => await service.UpdateAddress(map, userId);
+    
+    public async Task<AddressEntity> GetAddressByUserId(Guid userId) => await service.GetAddressByUserId(userId);
+    
+    public async Task<bool> DeleteAddress(Guid userId) => await service.DeleteAddress(userId);
 }

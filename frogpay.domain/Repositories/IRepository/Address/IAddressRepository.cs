@@ -9,9 +9,9 @@ namespace frogpay.domain.Repositories.IRepository.Address;
 public interface IAddressRepository
 {
     Task<AddressEntity> GetAddress(AddressEntity model);
-    Task<List<DataBankEntity>> GetAll();
+    Task<List<AddressEntity>> GetAll();
     Task<bool> CreateAddress(AddressEntity model);
-    Task<DataBankEntity> UpdateAddress(AddressEntity map);
-    Task<DataBankEntity> GetAddressByUserId(Guid userId);
+    Task<AddressEntity> UpdateAddress(AddressEntity map);
+    Task<AddressEntity> GetAddressByUserId(Guid userId);
     Task<bool> DeleteAddress(Guid account_id);
 }
