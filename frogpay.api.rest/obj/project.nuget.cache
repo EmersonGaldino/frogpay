@@ -1,8 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "/V66d1auCAHIENbON4jKnDN/HIS99ky7OZfmNOlP+S7TFEovI+waclfU5nHrBvDpLwodw+aRAoKTNJPXIEVePg==",
+  "dgSpecHash": "ogqrub2uWsrMUNClew/+4lP8xqVaICGdmJvwzpoY45f3vXQbMyKD4RCbHJKJQAkAZOAuuTD0w3+ajHeXgKQy9g==",
   "success": true,
   "projectFilePath": "/Users/emersongaldino/Projects/Tests/FrogPay.Galdino/frogpay.api.rest/frogpay.api.rest.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/emersongaldino/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
+    "/Users/emersongaldino/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.0/automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
+    "/Users/emersongaldino/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
+    "/Users/emersongaldino/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/6.0.0/microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "/Users/emersongaldino/.nuget/packages/microsoft.extensions.options/6.0.0/microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "/Users/emersongaldino/.nuget/packages/microsoft.extensions.primitives/6.0.0/microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "/Users/emersongaldino/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
