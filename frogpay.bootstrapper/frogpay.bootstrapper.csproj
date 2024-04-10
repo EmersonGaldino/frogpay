@@ -9,4 +9,17 @@
       <Compile Remove="Class1.cs" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Configurations\Auth\" />
+      <Folder Include="Configurations\Constants\" />
+      <Folder Include="Configurations\Cors\" />
+      <Folder Include="Configurations\Environments\" />
+      <Folder Include="Configurations\Exceptions\" />
+      <Folder Include="Configurations\Injections\" />
+      <Folder Include="Configurations\Logger\" />
+      <Folder Include="Configurations\Performance\" />
+      <Folder Include="Configurations\Security\" />
+      <Folder Include="Configurations\Swagger\" />
+    </ItemGroup>
+
 </Project>
