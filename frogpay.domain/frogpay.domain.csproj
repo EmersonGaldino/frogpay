@@ -10,7 +10,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Repositories\IRepository\Account\" />
       <Folder Include="Service\Account\" />
     </ItemGroup>
 
