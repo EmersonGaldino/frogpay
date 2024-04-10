@@ -13,34 +13,16 @@ public class AccountAppService: IAccountAppService
     {
         this.service = service;
     }
+    public async Task<DataBankEntity> GetAccount(DataBankEntity model) => await service.GetAccount(model);
+    
+    public async Task<List<DataBankEntity>> GetAll() => await service.GetAll();
+    
+    public async Task<bool> CreateAccount(DataBankEntity model) => await service.CreateAccount(model);
+    
+    public async Task<DataBankEntity> UpdateAccount(DataBankEntity map) => await service.UpdateAccount(map);
+    
+    public async Task<DataBankEntity> GetAccountByUserId(Guid userId) => await service.GetAccountByUserId(userId);
+    
+    public async Task<bool> DeleteAccount(Guid userId) => await service.DeleteAccount(userId);
 
-    public Task<DataBankEntity> GetAccount(DataBankEntity model)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<List<DataBankEntity>> GetAll()
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<bool> CreateAccount(DataBankEntity model)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<DataBankEntity> UpdateAccount(DataBankEntity map)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<DataBankEntity> GetAccountByUserId(Guid userId)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<bool> DeleteAccount(Guid userId)
-    {
-        throw new NotImplementedException();
-    }
 }
