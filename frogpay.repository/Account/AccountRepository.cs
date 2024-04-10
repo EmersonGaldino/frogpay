@@ -10,39 +10,41 @@ namespace frogpay.repository.Account;
 
 public class AccountRepository : BaseRepository<DataBankEntity>, IAccountRepository
 {
-    private DbContext context;
+    private readonly ContextDb context;
+
     public AccountRepository(ContextDb context) : base(context)
     {
         this.context = context;
     }
 
-    public Task<DataBankEntity> GetAccount(DataBankEntity model)
+    public async Task<DataBankEntity> GetAccount(DataBankEntity model) => await context.Account.FirstOrDefaultAsync(
+        account =>
+            account.User.id == model.UserId);
+
+
+    public async Task<List<DataBankEntity>> GetAll()
     {
-        throw new NotImplementedException();
+        var data = await context.Account
+            .Include(user => user.User)
+            .ToListAsync();
+        return data;
     }
 
-    public Task<List<DataBankEntity>> GetAll()
+    public async Task<bool> CreateAccount(DataBankEntity model)
     {
-        throw new NotImplementedException();
+        await AddOrUpdateAsync(model);
+        return true;
     }
 
-    public Task<bool> CreateAccount(DataBankEntity model)
+    public async Task<DataBankEntity> UpdateAccount(DataBankEntity map)
     {
-        throw new NotImplementedException();
+        await AddOrUpdateAsync(map);
+        return await GetByIdAsync(map.id);
     }
 
-    public Task<DataBankEntity> UpdateAccount(DataBankEntity map)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<DataBankEntity> GetAccountByUserId(Guid userId) =>
+        await context.Account.FirstOrDefaultAsync(u => u.id == userId);
 
-    public Task<DataBankEntity> GetAccountByUserId(Guid userId)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<bool> DeleteAccount(Guid userId)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<bool> DeleteAccount(Guid userId) =>
+        await Delete(await context.Account.FirstOrDefaultAsync(c => c.UserId == userId));
 }
