@@ -30,19 +30,14 @@ public class AccountService : IAccountService
         return account != null ? false : await repository.CreateAccount(model);
     }
 
-    public async Task<DataBankEntity> UpdateAccount(DataBankEntity map, Guid userId)
+    public async Task<DataBankEntity> UpdateAccount(DataBankEntity map, Guid account_id)
     {
-        map.id = userId;
+        map.id = account_id;
         return await repository.UpdateAccount(map);
     }
-
-
+    
     public async Task<DataBankEntity> GetAccountByUserId(Guid userId) => await repository.GetAccountByUserId(userId);
 
-
-    public async Task<bool> DeleteAccount(Guid userId)
-    {
-        var account = await GetAccountByUserId(userId);
-        return account != null ? false : await repository.DeleteAccount(userId);
-    }
+    public async Task<bool> DeleteAccount(Guid account_id) =>
+       await repository.DeleteAccount(account_id);
 }

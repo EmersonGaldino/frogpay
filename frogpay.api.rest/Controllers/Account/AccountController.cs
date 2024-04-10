@@ -68,18 +68,18 @@ public class AccountController : ApiBaseController
             Success = true
         }
     );
-    [HttpDelete("{id_pessoa}")]
+    [HttpDelete("{account_id}")]
     [SwaggerOperation(Summary = "Deletar  usuario",
         Description = "Deletado dados do usuario no sistema")]
     [SwaggerResponse(200, "Dados do usuario deletado com sucesso.",
         typeof(SuccessResponse<BaseModelView<bool>>))]
     [SwaggerResponse(400, "Não foi possível deletar os dados do usuario no sistema.", typeof(BadResponse))]
     [SwaggerResponse(500, "Erro no rastreamento da pilha.", typeof(BadResponse))]
-    public async Task<IActionResult> Delete(Guid id_pessoa) => await AutoResult(
+    public async Task<IActionResult> Delete(Guid account_id) => await AutoResult(
         async () => new BaseModelView<bool>
         {
-            Data = await AppService.DeleteAccount(id_pessoa),
-            Message = "Dados do usuario deletado com sucesso",
+            Data = await AppService.DeleteAccount(account_id),
+            Message = "Dados da conta do usuario deletado com sucesso",
             Success = true
         }
     );

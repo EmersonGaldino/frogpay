@@ -13,5 +13,5 @@ public interface IAccountRepository : IBaseRepository<DataBankEntity>
     Task<bool> CreateAccount(DataBankEntity model);
     Task<DataBankEntity> UpdateAccount(DataBankEntity map);
     Task<DataBankEntity> GetAccountByUserId(Guid userId);
-    Task<bool> DeleteAccount(Guid userId);
+    Task<bool> DeleteAccount(Guid account_id);
 }
