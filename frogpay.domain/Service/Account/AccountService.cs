@@ -9,10 +9,12 @@ namespace frogpay.domain.Service.Account;
 public class AccountService : IAccountService
 {
     private readonly IAccountRepository repository;
+
     public AccountService(IAccountRepository repository)
     {
         this.repository = repository;
     }
+
     public async Task<DataBankEntity> GetAccount(DataBankEntity model)
     {
         var account = await GetAccountByUserId(model.UserId);
@@ -20,7 +22,7 @@ public class AccountService : IAccountService
     }
 
     public async Task<List<DataBankEntity>> GetAll() => await repository.GetAll();
-    
+
 
     public async Task<bool> CreateAccount(DataBankEntity model)
     {
@@ -28,11 +30,15 @@ public class AccountService : IAccountService
         return account != null ? false : await repository.CreateAccount(model);
     }
 
-    public async Task<DataBankEntity> UpdateAccount(DataBankEntity map) => await repository.UpdateAccount(map);
+    public async Task<DataBankEntity> UpdateAccount(DataBankEntity map, Guid userId)
+    {
+        map.id = userId;
+        return await repository.UpdateAccount(map);
+    }
 
 
     public async Task<DataBankEntity> GetAccountByUserId(Guid userId) => await repository.GetAccountByUserId(userId);
-   
+
 
     public async Task<bool> DeleteAccount(Guid userId)
     {

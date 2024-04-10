@@ -19,7 +19,7 @@ public class AccountAppService: IAccountAppService
     
     public async Task<bool> CreateAccount(DataBankEntity model) => await service.CreateAccount(model);
     
-    public async Task<DataBankEntity> UpdateAccount(DataBankEntity map) => await service.UpdateAccount(map);
+    public async Task<DataBankEntity> UpdateAccount(DataBankEntity map, Guid userId) => await service.UpdateAccount(map, userId);
     
     public async Task<DataBankEntity> GetAccountByUserId(Guid userId) => await service.GetAccountByUserId(userId);
     

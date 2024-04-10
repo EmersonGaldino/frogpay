@@ -5,6 +5,7 @@ using frogpay.domain.Entity.Bank;
 using frogpay.domain.Repositories.IRepository.Account;
 using frogpay.repository.context;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace frogpay.repository.Account;
 
@@ -32,12 +33,14 @@ public class AccountRepository : BaseRepository<DataBankEntity>, IAccountReposit
 
     public async Task<bool> CreateAccount(DataBankEntity model)
     {
-        await AddOrUpdateAsync(model);
+        model.id = Guid.NewGuid();
+        await Add(model);
         return true;
     }
 
     public async Task<DataBankEntity> UpdateAccount(DataBankEntity map)
     {
+        map.UdateAt = DateTime.Now;
         await AddOrUpdateAsync(map);
         return await GetByIdAsync(map.id);
     }

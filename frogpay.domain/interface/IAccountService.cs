@@ -9,7 +9,7 @@ public interface IAccountService
     Task<DataBankEntity> GetAccount(DataBankEntity model);
     Task<List<DataBankEntity>> GetAll();
     Task<bool> CreateAccount(DataBankEntity model);
-    Task<DataBankEntity> UpdateAccount(DataBankEntity map);
+    Task<DataBankEntity> UpdateAccount(DataBankEntity map, Guid userId);
     Task<DataBankEntity> GetAccountByUserId(Guid userId);
     Task<bool> DeleteAccount(Guid userId);
 }
