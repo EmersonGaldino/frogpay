@@ -12,7 +12,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Base\" />
       <Folder Include="Controllers\Base\" />
       <Folder Include="Models\" />
     </ItemGroup>
