@@ -26,7 +26,10 @@ public class UserService : IUserService
 
     public async Task<UserEntity> UpdateUser(UserEntity map, Guid idPessoa) =>
          await repository.UpdateUser(map);
+
+    public async Task<bool> DeleteUser(Guid idPessoa) => await repository.DeleteUser(idPessoa);
     
+
 
     private async Task<UserEntity> GetByEmail(string email) => await repository.GetUserByEmail(email);
 }

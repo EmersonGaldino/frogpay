@@ -50,8 +50,7 @@ public class UserController : ApiBaseController
                 Message = "Usuario cirado com sucesso",
                 Success = true
             });
-        AddErrors("Já existe um usuario cadastrado no sistema usando este email.", 400);
-        return Error("Usuario");
+        return Error("Já existe um usuario cadastrado no sistema usando este email.");
     }
 
     [HttpPut("{id_pessoa}")]
@@ -69,6 +68,20 @@ public class UserController : ApiBaseController
             Success = true
         }
     );
-
+    [HttpDelete("{id_pessoa}")]
+    [SwaggerOperation(Summary = "Deletar  usuario",
+        Description = "Deletado dados do usuario no sistema")]
+    [SwaggerResponse(200, "Dados do usuario deletado com sucesso.",
+        typeof(SuccessResponse<BaseModelView<bool>>))]
+    [SwaggerResponse(400, "Não foi possível deletar os dados do usuario no sistema.", typeof(BadResponse))]
+    [SwaggerResponse(500, "Erro no rastreamento da pilha.", typeof(BadResponse))]
+    public async Task<IActionResult> Delete(Guid id_pessoa) => await AutoResult(
+        async () => new BaseModelView<bool>
+        {
+            Data = await AppService.DeleteUser(id_pessoa),
+            Message = "Dados do usuario deletado com sucesso",
+            Success = true
+        }
+    );
 
 }

@@ -13,4 +13,5 @@ public interface IUserRepository : IBaseRepository<UserEntity>
     Task<bool> CreateUser(UserEntity model);
     Task<UserEntity> UpdateUser(UserEntity map);
     Task<UserEntity> GetUserByEmail(string email);
+    Task<bool> DeleteUser(Guid idPessoa);
 }

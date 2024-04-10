@@ -24,7 +24,7 @@ namespace frogpay.api.rest.Controllers.Base
 
         private readonly ICollection<KeyValuePair<string, int>> errors = new List<KeyValuePair<string, int>>();
 
-        public void AddErrors(string message, int statusCode)
+        private void AddErrors(string message, int statusCode)
         {
             errors.Add(new KeyValuePair<string, int>(message, statusCode));
         }

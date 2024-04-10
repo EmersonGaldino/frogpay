@@ -25,10 +25,18 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
     {
         await context.SaveChangesAsync();
     }
+
     public async Task Add(TEntity model)
     {
         await DbSet.AddAsync(model);
         await SaveChanges();
+    }
+
+    public async Task<bool> Delete(TEntity model)
+    {
+        DbSet.Remove(model);
+        await SaveChanges();
+        return true;
     }
 
     public async Task<IList<TEntity>> GetAllAsync() => await DbSet.ToListAsync();
@@ -41,7 +49,6 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
         return true;
     }
 
-    
 
     public async Task AddOrUpdateAsync(TEntity model)
     {

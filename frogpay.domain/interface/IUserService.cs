@@ -11,4 +11,5 @@ public interface IUserService
     Task<List<UserEntity>> GetAllUsers();
     Task<bool> CreateUser(UserEntity model);
     Task<UserEntity> UpdateUser(UserEntity map, Guid idPessoa);
+    Task<bool> DeleteUser(Guid idPessoa);
 }

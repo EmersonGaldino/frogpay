@@ -46,4 +46,8 @@ public class UserRepository : BaseRepository<UserEntity>, IUserRepository
 
     public async Task<UserEntity> GetUserByEmail(string email) =>
          await context.User.FirstOrDefaultAsync(u => u.Email == email);
+
+    public async Task<bool> DeleteUser(Guid idPessoa) =>
+         await Delete(await context.User.FirstOrDefaultAsync(u => u.id == idPessoa));
+    
 }
