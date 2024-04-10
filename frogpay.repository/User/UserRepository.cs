@@ -25,7 +25,7 @@ public class UserRepository : BaseRepository<UserEntity>, IUserRepository
     public async Task<List<UserEntity>> GetAll()
     {
         var data = await context.User
-            .Include(store => store.Stories)
+            .Include(store => store.Stores)
             .ToListAsync();
         return data;
     } 

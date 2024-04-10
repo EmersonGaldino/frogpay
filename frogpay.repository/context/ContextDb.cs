@@ -27,10 +27,11 @@ public class ContextDb : DbContext
         base.OnModelCreating(modelBuilder);
         // modelBuilder.Entity<UserEntity>().ToTable("tb_user");
         
+        
         modelBuilder.Entity<StoreEntity>()
             .HasOne(s => s.user)
-            .WithMany(a => a.Stories)
-            .HasForeignKey(s => s.StoreId);
+            .WithMany(a => a.Stores)
+            .HasForeignKey(s => s.UserId);
     }
     public async Task<int> SaveChangesAsync()
     {

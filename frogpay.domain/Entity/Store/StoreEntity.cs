@@ -19,7 +19,7 @@ public class StoreEntity
     [Column("cnpj")]
     public string Cnpj { get; set; } 
     [Column("id_user")] 
-    public UserEntity User_id { get; set; }
+    public Guid UserId { get; set; }
     public UserEntity user { get; set; }
     [Column("data_abertura")]
     public DateTime Dataopen { get; set; }

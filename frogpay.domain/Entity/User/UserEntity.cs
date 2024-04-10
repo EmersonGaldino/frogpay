@@ -18,5 +18,5 @@ public class UserEntity : BaseEntity
     [Column("login")]
     public string Login { get; set; }
 
-    public ICollection<StoreEntity> Stories { get; set; }
+    public ICollection<StoreEntity> Stores { get; set; } 
 }
