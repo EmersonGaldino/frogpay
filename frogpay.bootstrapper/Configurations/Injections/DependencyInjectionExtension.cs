@@ -1,15 +1,20 @@
 using System;
 using frogpay.application.AppService.Account;
+using frogpay.application.AppService.Address;
 using frogpay.application.AppService.User;
 using frogpay.application.Interface.Account;
+using frogpay.application.Interface.Address;
 using frogpay.application.Interface.User;
 using frogpay.bootstrapper.Configurations.Performance.Filters;
 using frogpay.bootstrapper.Configurations.Security;
 using frogpay.domain.Repositories.IRepository.Account;
+using frogpay.domain.Repositories.IRepository.Address;
 using frogpay.domain.Repositories.IRepository.User;
 using frogpay.domain.Service.Account;
+using frogpay.domain.Service.Address;
 using frogpay.domain.Service.User;
 using frogpay.repository.Account;
+using frogpay.repository.Address;
 using frogpay.repository.context;
 using frogpay.repository.User;
 using Microsoft.AspNetCore.Mvc;
@@ -45,18 +50,21 @@ public static class DependencyInjectionExtension
 
         services.AddScoped<IUserAppService, UserAppService>();
         services.AddScoped<IAccountAppService, AccountAppService>();
+        services.AddScoped<IAddressAppService, AddressAppService>();
         #endregion
 
         #region .::Services
 
         services.AddScoped<IUserService, UserService>();
         services.AddScoped<IAccountService, AccountService>();
+        services.AddScoped<IAddressService, AddressService>();
         #endregion
 
         #region .::Repositories
 
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IAccountRepository, AccountRepository>();
+        services.AddScoped<IAddressRepository, AddressRepository>();
         #endregion
 
         #region .::UnitOfWork
