@@ -1,10 +1,12 @@
 using System;
 using frogpay.application.AppService.Account;
 using frogpay.application.AppService.Address;
+using frogpay.application.AppService.PaginationService;
 using frogpay.application.AppService.Store;
 using frogpay.application.AppService.User;
 using frogpay.application.Interface.Account;
 using frogpay.application.Interface.Address;
+using frogpay.application.Interface.PaginationService;
 using frogpay.application.Interface.Store;
 using frogpay.application.Interface.User;
 using frogpay.bootstrapper.Configurations.Environments;
@@ -21,7 +23,6 @@ using frogpay.domain.Service.User;
 using frogpay.repository.Account;
 using frogpay.repository.Address;
 using frogpay.repository.context;
-using frogpay.repository.Pagination;
 using frogpay.repository.Store;
 using frogpay.repository.User;
 using Microsoft.AspNetCore.Mvc;
@@ -69,6 +70,7 @@ public static class DependencyInjectionExtension
         services.AddScoped<IAccountAppService, AccountAppService>();
         services.AddScoped<IAddressAppService, AddressAppService>();
         services.AddScoped<IStoreAppService, StoreAppService>();
+        services.AddScoped<IPaginationAppService,PaginationAppService >();
         #endregion
 
         #region .::Services
@@ -85,7 +87,7 @@ public static class DependencyInjectionExtension
         services.AddScoped<IAccountRepository, AccountRepository>();
         services.AddScoped<IAddressRepository, AddressRepository>();
         services.AddScoped<IStoreRepository, StoreRepository>();
-        services.AddScoped<Pagination>();
+        
         #endregion
 
         #region .::UnitOfWork

@@ -25,4 +25,16 @@
       <ProjectReference Include="..\frogpay.domain\frogpay.domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Remove="Pagination\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Pagination\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Pagination\**" />
+    </ItemGroup>
+
 </Project>

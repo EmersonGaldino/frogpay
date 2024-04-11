@@ -6,7 +6,7 @@ using frogpay.domain.Entity.Pagination;
 
 namespace frogpay.application.Interface.PaginationService;
 
-public interface IPagination
+public interface IPaginationAppService
 {
     Task<PaginationEntity<TEntity>> GetPaginatedData<TEntity>(int pageSize, int pageNumber, 
         Expression<Func<TEntity, bool>> filter = null, 

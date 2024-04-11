@@ -9,10 +9,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace frogpay.application.AppService.PaginationService;
 
-public class Pagination : IPagination
+public class PaginationAppService : IPaginationAppService
 {
     private readonly ContextDb context;
-    public Pagination(ContextDb context)
+    public PaginationAppService(ContextDb context)
     {
         this.context = context;
     }
