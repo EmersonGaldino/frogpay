@@ -4,8 +4,10 @@ using System.Threading.Tasks;
 using AutoMapper;
 using frogpay.api.rest.Base;
 using frogpay.api.rest.Controllers.Base;
+using frogpay.api.rest.Models.Pagination;
 using frogpay.api.rest.Models.Store;
 using frogpay.application.Interface.Store;
+using frogpay.domain.Entity.Pagination;
 using frogpay.domain.Entity.Store;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
@@ -36,12 +38,12 @@ public class StoreController : ApiBaseController
     [HttpGet("{id_pessoa}")]
     [SwaggerOperation(Summary = "Buscar lojas dos usuarios",
         Description = "Busca todas as lojas e usuarios cadastrados.")]
-    [SwaggerResponse(200, "Conta do Usuario encontrado com sucesso.", typeof(SuccessResponse<BaseModelView<List<StoreModelView>>>))]
+    [SwaggerResponse(200, "Conta do Usuario encontrado com sucesso.", typeof(SuccessResponse<BaseModelView<PaginationModelView<StoreModelView>>>))]
     [SwaggerResponse(400, "Não foi possível localizar usuarios do sistema.", typeof(BadResponse))]
     [SwaggerResponse(500, "Erro no rastreamento da pilha.", typeof(BadResponse))]
-    public async Task<IActionResult> Get(Guid id_pessoa) => await AutoResult(async () => new BaseModelView<List<StoreModelView>>
+    public async Task<IActionResult> Get(Guid id_pessoa, [FromHeader] int itens_pagina, [FromHeader] int pagina) => await AutoResult(async () => new BaseModelView<PaginationEntity<StoreEntity>>
     {
-        Data = Mapper.Map<List<StoreModelView>>(await AppService.GetStoreByUserId(id_pessoa)),
+        Data = await AppService.GetStoreByUserId(id_pessoa,itens_pagina,pagina),
         Message = "lojas encontradas com sucesso",
         Success = true
     });
