@@ -13,4 +13,9 @@
       <ProjectReference Include="..\frogpay.domain\frogpay.domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="AppService\Store\" />
+      <Folder Include="Interface\Store\" />
+    </ItemGroup>
+
 </Project>
