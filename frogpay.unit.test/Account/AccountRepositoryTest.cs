@@ -43,7 +43,6 @@ public class AccountRepositoryTest : TestsBase
         // Act
         var result = await repository.GetAccountByUserId(model.UserId);
         var account = context.Account.FirstOrDefault(x => x.UserId == model.UserId);
-        
         // Assert
         Assert.NotNull(result);
         Assert.AreEqual(account.UserId, model.UserId);

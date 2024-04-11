@@ -1,3 +1,4 @@
+using frogpay.domain.Entity.Address;
 using frogpay.repository.context;
 using Microsoft.EntityFrameworkCore;
 
@@ -33,6 +34,19 @@ public class TestsBase : IDisposable
             },
             new DataBankEntity { UserId = Guid.NewGuid(),  }
         );
+        
+        context.Address.AddRange(
+                new AddressEntity
+                {
+                    id = new Guid("e95bcb4b-1c8c-4e17-a02c-f2a99f24086e"),
+                    UserId  = new Guid("bdb4ae5e-09b2-4036-94a0-3b7396f57101"),
+                    City = "Osasco",
+                    Complement = "Na quebrada",
+                    Neighborhood = "Centro",
+                    Number = 100,
+                    UF = "SP",
+                    PublicPlace = "Av dos Autonomistas"
+            });
 
         context.SaveChanges();
     }
