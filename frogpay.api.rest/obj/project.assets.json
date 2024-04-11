@@ -1036,7 +1036,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "frogpay.domain": "1.0.0"
+          "frogpay.domain": "1.0.0",
+          "frogpay.repository": "1.0.0"
         },
         "compile": {
           "bin/placeholder/frogpay.application.dll": {}

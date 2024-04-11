@@ -31,6 +31,9 @@
             "projectReferences": {
               "/Users/emersongaldino/Projects/Tests/FrogPay.Galdino/frogpay.domain/frogpay.domain.csproj": {
                 "projectPath": "/Users/emersongaldino/Projects/Tests/FrogPay.Galdino/frogpay.domain/frogpay.domain.csproj"
+              },
+              "/Users/emersongaldino/Projects/Tests/FrogPay.Galdino/frogpay.repository/frogpay.repository.csproj": {
+                "projectPath": "/Users/emersongaldino/Projects/Tests/FrogPay.Galdino/frogpay.repository/frogpay.repository.csproj"
               }
             }
           }
@@ -100,6 +103,106 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.421/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/emersongaldino/Projects/Tests/FrogPay.Galdino/frogpay.repository/frogpay.repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/emersongaldino/Projects/Tests/FrogPay.Galdino/frogpay.repository/frogpay.repository.csproj",
+        "projectName": "frogpay.repository",
+        "projectPath": "/Users/emersongaldino/Projects/Tests/FrogPay.Galdino/frogpay.repository/frogpay.repository.csproj",
+        "packagesPath": "/Users/emersongaldino/.nuget/packages/",
+        "outputPath": "/Users/emersongaldino/Projects/Tests/FrogPay.Galdino/frogpay.repository/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/emersongaldino/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/emersongaldino/Projects/Tests/FrogPay.Galdino/frogpay.domain/frogpay.domain.csproj": {
+                "projectPath": "/Users/emersongaldino/Projects/Tests/FrogPay.Galdino/frogpay.domain/frogpay.domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            },
+            "Swashbuckle.AspNetCore.Annotations": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            },
+            "Swashbuckle.AspNetCore.Swagger": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerGen": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerUI": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -11,6 +11,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\frogpay.domain\frogpay.domain.csproj" />
+      <ProjectReference Include="..\frogpay.repository\frogpay.repository.csproj" />
     </ItemGroup>
 
 </Project>

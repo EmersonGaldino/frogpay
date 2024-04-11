@@ -31,6 +31,9 @@
             "projectReferences": {
               "/Users/emersongaldino/Projects/Tests/FrogPay.Galdino/frogpay.domain/frogpay.domain.csproj": {
                 "projectPath": "/Users/emersongaldino/Projects/Tests/FrogPay.Galdino/frogpay.domain/frogpay.domain.csproj"
+              },
+              "/Users/emersongaldino/Projects/Tests/FrogPay.Galdino/frogpay.repository/frogpay.repository.csproj": {
+                "projectPath": "/Users/emersongaldino/Projects/Tests/FrogPay.Galdino/frogpay.repository/frogpay.repository.csproj"
               }
             }
           }
