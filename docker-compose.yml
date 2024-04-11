@@ -1,0 +1,49 @@
+﻿services:
+  frogpay.api.rest:
+    container_name: API
+    image: frogpay.api.rest
+    build:
+      context: .
+      dockerfile: frogpay.api.rest/Dockerfile
+    ports:
+      - '8080:80'
+      - '9090:443'
+    depends_on:
+      - postgres
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker
+
+  postgres:
+    container_name: DB
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: frogpay
+
+    volumes:
+      - ./sql/1-InitialDatabase.sql:/tmp/1-initialDatabase.sql
+      - ./sql/init-database-frogpay.sh:/tmp/init-database-frogpay.sh
+
+  # command: ./tmp/init-database-frogpay.sh
+
+  kibana:
+    container_name: LOG
+    image: docker.elastic.co/kibana/kibana:7.17.0
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
+    environment:
+      ELASTICSEARCH_URL: http://elasticsearch:9200
+
+  elasticsearch:
+    container_name: ELASTIC
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.0
+    ports:
+      - "9200:9200"
+    environment:
+      discovery.type: single-node
