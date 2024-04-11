@@ -2,7 +2,7 @@ using System;
 
 namespace frogpay.api.rest.Models.Account;
 
-public class AccountViewModel
+public class AccountViewModel 
 {
     public Guid UserId { get; set; }
     public int CodBank { get; set; }

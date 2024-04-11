@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using frogpay.domain.Entity.Bank;
+using frogpay.domain.Entity.Pagination;
 using frogpay.domain.Repositories.IRepository.Account;
 
 namespace frogpay.domain.Service.Account;
@@ -23,7 +24,6 @@ public class AccountService : IAccountService
 
     public async Task<List<DataBankEntity>> GetAll() => await repository.GetAll();
 
-
     public async Task<bool> CreateAccount(DataBankEntity model)
     {
         var account = await GetAccountByUserId(model.UserId);
@@ -35,9 +35,9 @@ public class AccountService : IAccountService
         map.id = account_id;
         return await repository.UpdateAccount(map);
     }
-    
+
     public async Task<DataBankEntity> GetAccountByUserId(Guid userId) => await repository.GetAccountByUserId(userId);
 
     public async Task<bool> DeleteAccount(Guid account_id) =>
-       await repository.DeleteAccount(account_id);
+        await repository.DeleteAccount(account_id);
 }

@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using frogpay.domain.Entity.Bank;
+using frogpay.domain.Entity.Pagination;
 using frogpay.domain.Repositories.IRepository.Account;
 using frogpay.repository.context;
 using Microsoft.EntityFrameworkCore;
@@ -12,10 +15,12 @@ namespace frogpay.repository.Account;
 public class AccountRepository : BaseRepository<DataBankEntity>, IAccountRepository
 {
     private readonly ContextDb context;
+    private readonly Pagination.Pagination pagination;
 
-    public AccountRepository(ContextDb context) : base(context)
+    public AccountRepository(ContextDb context,Pagination.Pagination pagination) : base(context)
     {
         this.context = context;
+        this.pagination = pagination;
     }
 
     public async Task<DataBankEntity> GetAccount(DataBankEntity model) => await context.Account.FirstOrDefaultAsync(
@@ -28,6 +33,13 @@ public class AccountRepository : BaseRepository<DataBankEntity>, IAccountReposit
         var data = await context.Account
             .Include(user => user.User)
             .ToListAsync();
+        
+        // var result = await pagination.GetPaginatedData<DataBankEntity>(
+        //     context,
+        //     2 ,
+        //     1,
+        //     filter: x=> x.UserId == x.UserId,
+        //     orderBy: o => o.OrderBy(x =>x.UserId));
         return data;
     }
 
@@ -50,4 +62,7 @@ public class AccountRepository : BaseRepository<DataBankEntity>, IAccountReposit
 
     public async Task<bool> DeleteAccount(Guid account_id) =>
         await Delete(await context.Account.FirstOrDefaultAsync(c => c.id == account_id));
+    
+    
+    
 }
