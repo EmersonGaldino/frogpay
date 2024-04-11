@@ -8,6 +8,11 @@ namespace frogpay.application.AppService.Store;
 
 public class StoreAppService : IStoreAppService
 {
+    private readonly IStoreService service;
+    public StoreAppService(IStoreService service)
+    {
+        this.service = service;
+    }
     public Task<StoreEntity> GetAccount(StoreEntity model)
     {
         throw new NotImplementedException();
