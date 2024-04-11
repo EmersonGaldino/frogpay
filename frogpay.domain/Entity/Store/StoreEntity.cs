@@ -9,9 +9,7 @@ namespace frogpay.domain.Entity.Store;
 [Table("tb_store")]
 public class StoreEntity : BaseEntity
 {
-    [Key]
-    [Column("id")]
-    public Guid StoreId { get; set; }
+   
     [Column("nome_fantasia")]
     public string NameFantasy { get; set; }
     [Column("razao_social")]
@@ -20,7 +18,6 @@ public class StoreEntity : BaseEntity
     public string Cnpj { get; set; } 
     [Column("id_user")] 
     public Guid UserId { get; set; }
-    public UserEntity user { get; set; }
     [Column("data_abertura")]
     public DateTime Dataopen { get; set; }
 

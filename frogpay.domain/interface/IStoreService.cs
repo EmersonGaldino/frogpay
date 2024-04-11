@@ -10,6 +10,6 @@ public interface IStoreService
     Task<List<StoreEntity>> GetAll();
     Task<bool> CreateStore(StoreEntity model);
     Task<StoreEntity> UpdateStore(StoreEntity map, Guid account_id);
-    Task<StoreEntity> GetStoreByUserId(Guid userId);
+    Task<List<StoreEntity>> GetStoreByUserId(Guid userId);
     Task<bool> DeleteStore(Guid account_id);
 }

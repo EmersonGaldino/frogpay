@@ -17,6 +17,7 @@ namespace frogpay.api.rest.AutoMapper
 
             CreateMap<UserEntity, UserModelView>().ReverseMap();
             CreateMap<StoreEntity, StoreModelView>().ReverseMap();
+            CreateMap<StoreEntity, StoreViewModel>().ReverseMap();
             CreateMap<UserEntity, UserViewModel>().ReverseMap();
             CreateMap<DataBankEntity, AccountModelView>().ReverseMap();
             CreateMap<DataBankEntity, AccountViewModel>().ReverseMap();

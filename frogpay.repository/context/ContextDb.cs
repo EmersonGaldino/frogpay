@@ -33,7 +33,7 @@ public class ContextDb : DbContext
     {
         base.OnModelCreating(modelBuilder);
         modelBuilder.Entity<StoreEntity>()
-            .HasOne(s => s.user)
+            .HasOne(s => s.User)
             .WithMany(a => a.Stores)
             .HasForeignKey(s => s.UserId);
 

@@ -35,7 +35,7 @@ public class StoreService : IStoreService
         return await repository.UpdateStore(map);
     }
     
-    public async Task<StoreEntity> GetStoreByUserId(Guid userId) => await repository.GetStoreByUserId(userId);
+    public async Task<List<StoreEntity>> GetStoreByUserId(Guid userId) => await repository.GetStoreByUserId(userId);
 
     public async Task<bool> DeleteStore(Guid Store_id) =>
         await repository.DeleteStore(Store_id);

@@ -22,7 +22,7 @@ public class StoreAppService : IStoreAppService
     
     public async Task<StoreEntity> UpdateStore(StoreEntity map, Guid userId) => await service.UpdateStore(map, userId);
     
-    public async Task<StoreEntity> GetStoreByUserId(Guid userId) => await service.GetStoreByUserId(userId);
+    public async Task<List<StoreEntity>> GetStoreByUserId(Guid userId) => await service.GetStoreByUserId(userId);
     
     public async Task<bool> DeleteStore(Guid userId) => await service.DeleteStore(userId);
 }
