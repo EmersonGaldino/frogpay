@@ -7,7 +7,7 @@ using frogpay.domain.Entity.User;
 namespace frogpay.domain.Entity.Store;
 
 [Table("tb_store")]
-public class StoreEntity 
+public class StoreEntity : BaseEntity
 {
     [Key]
     [Column("id")]

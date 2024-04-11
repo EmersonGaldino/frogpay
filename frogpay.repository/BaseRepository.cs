@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace frogpay.repository;
 
-public class BaseRepository<TEntity> : IBaseRepository<TEntity>
+public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : BaseEntity
 {
     protected readonly ContextDb context;
     protected DbSet<TEntity> DbSet;
