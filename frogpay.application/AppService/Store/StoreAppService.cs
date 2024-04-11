@@ -13,7 +13,8 @@ public class StoreAppService : IStoreAppService
     {
         this.service = service;
     }
-    public Task<StoreEntity> GetAccount(StoreEntity model)
+
+    public Task<StoreEntity> GetStore(StoreEntity model)
     {
         throw new NotImplementedException();
     }
@@ -23,22 +24,22 @@ public class StoreAppService : IStoreAppService
         throw new NotImplementedException();
     }
 
-    public Task<bool> CreateAccount(StoreEntity model)
+    public Task<bool> CreateStore(StoreEntity model)
     {
         throw new NotImplementedException();
     }
 
-    public Task<StoreEntity> UpdateAccount(StoreEntity map, Guid userId)
+    public Task<StoreEntity> UpdateStore(StoreEntity map, Guid userId)
     {
         throw new NotImplementedException();
     }
 
-    public Task<StoreEntity> GetAccountByUserId(Guid userId)
+    public Task<StoreEntity> GetStoreByUserId(Guid userId)
     {
         throw new NotImplementedException();
     }
 
-    public Task<bool> DeleteAccount(Guid userId)
+    public Task<bool> DeleteStore(Guid userId)
     {
         throw new NotImplementedException();
     }

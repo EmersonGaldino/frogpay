@@ -7,10 +7,10 @@ namespace frogpay.application.Interface.Store;
 
 public interface IStoreAppService
 {
-    Task<StoreEntity> GetAccount(StoreEntity model);
+    Task<StoreEntity> GetStore(StoreEntity model);
     Task<List<StoreEntity>> GetAll();
-    Task<bool> CreateAccount(StoreEntity model);
-    Task<StoreEntity> UpdateAccount(StoreEntity map, Guid userId);
-    Task<StoreEntity> GetAccountByUserId(Guid userId);
-    Task<bool> DeleteAccount(Guid userId);
+    Task<bool> CreateStore(StoreEntity model);
+    Task<StoreEntity> UpdateStore(StoreEntity map, Guid userId);
+    Task<StoreEntity> GetStoreByUserId(Guid userId);
+    Task<bool> DeleteStore(Guid userId);
 }

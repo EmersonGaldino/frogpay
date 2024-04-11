@@ -6,10 +6,10 @@ using frogpay.domain.Entity.Store;
 
 public interface IStoreService
 {
-    Task<StoreEntity> GetAccount(StoreEntity model);
+    Task<StoreEntity> GetStore(StoreEntity model);
     Task<List<StoreEntity>> GetAll();
-    Task<bool> CreateAccount(StoreEntity model);
-    Task<StoreEntity> UpdateAccount(StoreEntity map, Guid account_id);
-    Task<StoreEntity> GetAccountByUserId(Guid userId);
-    Task<bool> DeleteAccount(Guid account_id);
+    Task<bool> CreateStore(StoreEntity model);
+    Task<StoreEntity> UpdateStore(StoreEntity map, Guid account_id);
+    Task<StoreEntity> GetStoreByUserId(Guid userId);
+    Task<bool> DeleteStore(Guid account_id);
 }

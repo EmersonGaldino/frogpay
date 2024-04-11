@@ -15,7 +15,8 @@ public class StoreRepository : BaseRepository<StoreEntity>, IStoreRepository
         this.context = context;
     }
 
-    public Task<StoreEntity> GetAccount(StoreEntity model)
+
+    public Task<StoreEntity> GetStore(StoreEntity model)
     {
         throw new NotImplementedException();
     }
@@ -25,22 +26,22 @@ public class StoreRepository : BaseRepository<StoreEntity>, IStoreRepository
         throw new NotImplementedException();
     }
 
-    public Task<bool> CreateAccount(StoreEntity model)
+    public Task<bool> CreateStore(StoreEntity model)
     {
         throw new NotImplementedException();
     }
 
-    public Task<StoreEntity> UpdateAccount(StoreEntity map)
+    public Task<StoreEntity> UpdateStore(StoreEntity map)
     {
         throw new NotImplementedException();
     }
 
-    public Task<StoreEntity> GetAccountByUserId(Guid userId)
+    public Task<StoreEntity> GetStoreByUserId(Guid userId)
     {
         throw new NotImplementedException();
     }
 
-    public Task<bool> DeleteAccount(Guid account_id)
+    public Task<bool> DeleteStore(Guid account_id)
     {
         throw new NotImplementedException();
     }
