@@ -41,7 +41,10 @@ public class StoreController : ApiBaseController
     [SwaggerResponse(200, "Conta do Usuario encontrado com sucesso.", typeof(SuccessResponse<BaseModelView<PaginationModelView<StoreModelView>>>))]
     [SwaggerResponse(400, "Não foi possível localizar usuarios do sistema.", typeof(BadResponse))]
     [SwaggerResponse(500, "Erro no rastreamento da pilha.", typeof(BadResponse))]
-    public async Task<IActionResult> Get(Guid id_pessoa, [FromHeader] int itens_pagina, [FromHeader] int pagina) => await AutoResult(async () => new BaseModelView<PaginationEntity<StoreEntity>>
+    public async Task<IActionResult> Get(
+        Guid id_pessoa, 
+        [FromHeader] int itens_pagina, 
+        [FromHeader] int pagina) => await AutoResult(async () => new BaseModelView<PaginationEntity<StoreEntity>>
     {
         Data = await AppService.GetStoreByUserId(id_pessoa,itens_pagina,pagina),
         Message = "lojas encontradas com sucesso",
@@ -54,19 +57,13 @@ public class StoreController : ApiBaseController
     [SwaggerResponse(200, "Usuarios criado com sucesso.", typeof(SuccessResponse<BaseModelView<bool>>))]
     [SwaggerResponse(400, "Não foi possível criar usuarios do sistema.", typeof(BadResponse))]
     [SwaggerResponse(500, "Erro no rastreamento da pilha.", typeof(BadResponse))]
-    public async Task<IActionResult> Post([FromBody] StoreViewModel model)
-    {
-        var data = await AppService.CreateStore(Mapper.Map<StoreEntity>(model));
-
-        if (data)
-            return Ok(new BaseModelView<bool>
+    public async Task<IActionResult> Post([FromBody] StoreViewModel model) =>await AutoResult(
+            async () => new BaseModelView<bool>
             {
-                Data = data,
+                Data =  await AppService.CreateStore(Mapper.Map<StoreEntity>(model)),
                 Message = "Conta cirada com sucesso",
                 Success = true
             });
-        return Error("Já existe um usuario cadastrado no sistema usando este email.");
-    }
 
     [HttpPut("{Store_id}")]
     [SwaggerOperation(Summary = "Alerar  usuarios",

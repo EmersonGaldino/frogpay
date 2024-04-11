@@ -8,4 +8,5 @@ public class StoreViewModel
     public string Social { get; set; }
     public string Cnpj { get; set; } 
     public DateTime Dataopen { get; set; }
+    public Guid UserId { get; set; }
 }

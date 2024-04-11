@@ -23,11 +23,8 @@ public class StoreService : IStoreService
     public async Task<List<StoreEntity>> GetAll() => await repository.GetAll();
 
 
-    public async Task<bool> CreateStore(StoreEntity model)
-    {
-        var store = await GetStoreByUserId(model.UserId);
-        return store != null ? false : await repository.CreateStore(model);
-    }
+    public async Task<bool> CreateStore(StoreEntity model) =>
+          await repository.CreateStore(model);
 
     public async Task<StoreEntity> UpdateStore(StoreEntity map, Guid Store_id)
     {

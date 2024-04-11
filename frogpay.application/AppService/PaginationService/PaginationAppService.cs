@@ -24,31 +24,19 @@ public class PaginationAppService : IPaginationAppService
     {
         IQueryable<TEntity> query = context.Set<TEntity>();
 
-        if (filter != null)
+        query = query.ApplyFilter(filter)
+            .ApplyOrderBy(orderBy);
+        
+        return new PaginationEntity<TEntity>
         {
-            query = query.Where(filter);
-        }
-
-        if (orderBy != null)
-        {
-            query = orderBy(query);
-        }
-
-        var totalItems = await query.CountAsync();
-        var totalPages = (int)Math.Ceiling((double)totalItems / pageSize);
-
-        var data = await query.Skip((pageNumber - 1) * pageSize)
-            .Take(pageSize)
-            .ToListAsync();
-
-        var pagedResult = new PaginationEntity<TEntity>
-        {
-            Items = data,
-            TotalItems = totalItems,
+            Items = await query.Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync(),
+            TotalItems = await query.CountAsync(),
             PageSize = pageSize,
             PageNumber = pageNumber
         };
-
-        return pagedResult;
     }
+    
+
 }
