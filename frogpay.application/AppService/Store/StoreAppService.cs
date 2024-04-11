@@ -14,33 +14,15 @@ public class StoreAppService : IStoreAppService
         this.service = service;
     }
 
-    public Task<StoreEntity> GetStore(StoreEntity model)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<List<StoreEntity>> GetAll()
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<bool> CreateStore(StoreEntity model)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<StoreEntity> UpdateStore(StoreEntity map, Guid userId)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<StoreEntity> GetStoreByUserId(Guid userId)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<bool> DeleteStore(Guid userId)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<StoreEntity> GetStore(StoreEntity model) => await service.GetStore(model);
+    
+    public async Task<List<StoreEntity>> GetAll() => await service.GetAll();
+    
+    public async Task<bool> CreateStore(StoreEntity model) => await service.CreateStore(model);
+    
+    public async Task<StoreEntity> UpdateStore(StoreEntity map, Guid userId) => await service.UpdateStore(map, userId);
+    
+    public async Task<StoreEntity> GetStoreByUserId(Guid userId) => await service.GetStoreByUserId(userId);
+    
+    public async Task<bool> DeleteStore(Guid userId) => await service.DeleteStore(userId);
 }

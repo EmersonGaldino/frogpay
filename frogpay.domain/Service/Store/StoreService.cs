@@ -14,33 +14,29 @@ public class StoreService : IStoreService
         this.repository = repository;
     }
 
-    public Task<StoreEntity> GetStore(StoreEntity model)
+    public async Task<StoreEntity> GetStore(StoreEntity model)
     {
-        throw new NotImplementedException();
+        var Store = await GetStoreByUserId(model.UserId);
+        return Store == null ? null : await repository.GetStore(model);
     }
 
-    public Task<List<StoreEntity>> GetAll()
+    public async Task<List<StoreEntity>> GetAll() => await repository.GetAll();
+
+
+    public async Task<bool> CreateStore(StoreEntity model)
     {
-        throw new NotImplementedException();
+        var store = await GetStoreByUserId(model.UserId);
+        return store != null ? false : await repository.CreateStore(model);
     }
 
-    public Task<bool> CreateStore(StoreEntity model)
+    public async Task<StoreEntity> UpdateStore(StoreEntity map, Guid Store_id)
     {
-        throw new NotImplementedException();
+        map.id = Store_id;
+        return await repository.UpdateStore(map);
     }
+    
+    public async Task<StoreEntity> GetStoreByUserId(Guid userId) => await repository.GetStoreByUserId(userId);
 
-    public Task<StoreEntity> UpdateStore(StoreEntity map, Guid account_id)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<StoreEntity> GetStoreByUserId(Guid userId)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<bool> DeleteStore(Guid account_id)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<bool> DeleteStore(Guid Store_id) =>
+        await repository.DeleteStore(Store_id);
 }

@@ -23,4 +23,6 @@ public class StoreEntity : BaseEntity
     public UserEntity user { get; set; }
     [Column("data_abertura")]
     public DateTime Dataopen { get; set; }
+
+    public UserEntity User { get; set; }
 }

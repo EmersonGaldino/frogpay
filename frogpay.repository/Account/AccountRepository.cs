@@ -15,12 +15,10 @@ namespace frogpay.repository.Account;
 public class AccountRepository : BaseRepository<DataBankEntity>, IAccountRepository
 {
     private readonly ContextDb context;
-    private readonly Pagination.Pagination pagination;
 
-    public AccountRepository(ContextDb context,Pagination.Pagination pagination) : base(context)
+    public AccountRepository(ContextDb context) : base(context)
     {
         this.context = context;
-        this.pagination = pagination;
     }
 
     public async Task<DataBankEntity> GetAccount(DataBankEntity model) => await context.Account.FirstOrDefaultAsync(
